@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title> New Document </title>
+  <script type="text/javascript" src="raphael-min.js"></script>
+ </head>
+ <body>
+ hello world!
+ <div class="extra" id="Element.getSubpath-extra" style="float: right; padding: 10px; width: 99px; height: 99px; background-image: url(examples/img/blueprint-min.png); background-color: rgb(44, 83, 176); background-position: initial initial; background-repeat: no-repeat no-repeat;"></div>
+ <script type="text/javascript">
+ Raphael(function () {
+    function prepare(id) {
+        var div = document.getElementById(id);
+        div.style.cssText = "float:right;padding:10px;width:99px;height:99px;background:#2C53B0 url(examples/img/blueprint-min.png) no-repeat";
+        return Raphael(div, 99, 99);
+    }
+    var line = {
+        stroke: "#fff",
+        "stroke-width": 2,
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round"
+    },
+    none = {
+        fill: "#000",
+        opacity: 0
+    };
+    (function (r) {
+        var e = r.path("M10,10R20,70 30,40 40,80 50,10 60,50 70,20 80,30 90,90").attr(line),
+            l = e.getTotalLength() - 10,
+            to = 1;
+        r.customAttributes.along = function (a) {
+            return {
+                path: e.getSubpath(a * l, a * l + 11)
+            };
+        };
+        var c = r.path().attr(line).attr({
+            along: 0,
+            stroke: "#f00",
+            "stroke-width": 3
+        });
+        r.rect(0, 0, 100, 100).attr(none).click(function () {
+            c.stop().animate({
+                along: to
+            }, 5000);
+            to = +!to;
+        });
+    })(prepare("Element.getSubpath-extra"));
+ });
+ </script>
+ </body>
+</html>
