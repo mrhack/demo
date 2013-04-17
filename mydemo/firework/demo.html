@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title> New Document </title>
+  <script type="text/javascript"
+    src="../../lib/sea/sea-debug.js"
+    data-config="../../app/config"
+    ></script>
+   <style type="text/css">
+   	canvas{
+   		background: black;
+   	}
+   </style>
+ </head>
+ <body>
+ <div id="fps"></div>
+ <canvas width=400px height=400px></canvas>
+ <script type="text/javascript">
+ 	seajs.use('../../mydemo/firework/fireworks' , function( exports ){
+ 		exports.fireworks($('canvas') , {
+ 			autoPlay : true
+ 			, enableClick : true
+ 			, 
+ 		});
+ 	});
+ </script>
+ </body>
+</html>
