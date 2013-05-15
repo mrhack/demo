@@ -25,7 +25,8 @@ seajs.config({
 
     // for bootstrap
     ,'bootstrap': {
-        src: '../raphael/raphael-min'
+        src: '../bootstrap/js/bootstrap',
+        deps: ['jquery', '../css/bootstrap.css']
     }
   },
   alias : {

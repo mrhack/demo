@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title> pencil to the world </title>
+  <script type="text/javascript"
+    src="../../lib/sea/sea-debug.js"
+    data-config="../../app/config"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.css">
+ </head>
+ <body>
+  <div id="main">
+    <canvas width="400px" height="400px" >你的浏览器不支持，请使用最新的chrome或者firefox浏览器</canvas>
+  </div>
+  <footer></footer>
+  <button id="save">save</button>
+
+ <script type="text/javascript">
+    seajs.use(['../../examples/pencil_to_world/drawSketch','bootstrap'] , function( exports ){
+    var can = document.getElementsByTagName('canvas')[0];
+    exports.render( can );
+    exports.drawImage("./8abc3280gw1dkyzgprn50j.jpg");
+
+    document.getElementById("save").addEventListener( 'click' , function(){
+      //将图像输出为base64压缩的字符串  默认为image/png
+      var data = can.toDataURL();
+      //删除字符串前的提示信息 "data:image/png;base64,"
+      var b64 = data.substring( 22 );
+      //POST到服务器上，生成图片
+      window.location.href = data;
+    });
+    });
+ </script>
+ </body>
+</html>

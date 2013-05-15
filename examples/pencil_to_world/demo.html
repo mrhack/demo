@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title> pencil to the world </title>
+  <script type="text/javascript"
+    src="../../lib/sea/sea-debug.js"
+    data-config="../../app/config"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.css">
+ </head>
+ <body>
+  <header style="height:41px;">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Title</a>
+          <div class="nav-collapse collapse navbar-inverse-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">首页</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-search pull-left" action="">
+              <input type="text" class="search-query span2" placeholder="Search">
+            </form>
+            <ul class="nav pull-right">
+              <li><a href="#">Link</a></li>
+              <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.nav-collapse -->
+        </div>
+      </div><!-- /navbar-inner -->
+    </div>
+  </header>
+  <div id="main">
+    <canvas width="400px" height="400px" >你的浏览器不支持，请使用最新的chrome或者firefox浏览器</canvas>
+  </div>
+  <footer></footer>
+  <button id="save">save</button>
+
+ <script type="text/javascript">
+ 	seajs.use(['../../examples/pencil_to_world/drawSketch','bootstrap'] , function( exports ){
+    var can = document.getElementsByTagName('canvas')[0];
+    exports.render( can );
+    exports.drawImage("./8abc3280gw1dkyzgprn50j.jpg");
+
+    document.getElementById("save").addEventListener( 'click' , function(){
+      //将图像输出为base64压缩的字符串  默认为image/png
+      var data = can.toDataURL();
+      //删除字符串前的提示信息 "data:image/png;base64,"
+      var b64 = data.substring( 22 );
+      //POST到服务器上，生成图片
+      window.location.href = data;
+    });
+ 	});
+ </script>
+ </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title> pencil to the world </title>
+  <script type="text/javascript"
+    src="../../lib/sea/sea-debug.js"
+    data-config="../../app/config"
+    ></script>
+ </head>
+ <body>
+    <div id="sp" style="background:red;">
+        1
+    </div>
+ <script type="text/javascript">
+    var pos = null;
+    var pos_dur = [ 0 , 0 ];
+    var sp = document.getElementById('sp');
+    var last_t = new Date();
+    var speeds = [];
+    document.addEventListener('mousemove' , function( ev ){
+        //pos = [ ev.pageX , ev.pageY ];
+
+        if( !pos ){
+            pos = [ ev.pageX , ev.pageY ];
+            return;
+        }
+        var t = new Date();
+        var dur = t - last_t;
+        pos_dur[0] += Math.abs( ev.pageX - pos[0] );
+        pos_dur[1] += Math.abs( ev.pageY - pos[1] );
+        pos = [ ev.pageX , ev.pageY ];
+        /*
+        if( dur  < 50 ){
+            pos_dur[0] += Math.abs( ev.pageX - pos[0] );
+            pos_dur[1] += Math.abs( ev.pageY - pos[1] );
+        } else {
+            var speed = Math.round( Math.sqrt(pos_dur[0] * pos_dur[0] + pos_dur[1] * pos_dur[1]) ) / 160;
+            speeds.push( speed );
+            sp.style.width = speed + "%";
+            pos = [ ev.pageX , ev.pageY ];
+            last_t = t;
+            pos_dur = [ 0 , 0 ];
+
+            console.log( speed );
+        }
+        */
+
+    } , false);
+
+    var last_dur = pos_dur.concat([]);
+    var speeds = 0;
+    var dur = 50;
+    var times = 0;
+    var collectTimes = 10;
+    setInterval(function(){
+        times++;
+        var spx = ( pos_dur[0] - last_dur[0] );
+        var spy = ( pos_dur[1] - last_dur[1] );
+        var speed = Math.round( Math.sqrt(spx * spx + spy * spy) ) / dur * 4;
+
+        speeds += speed;
+        if( times % collectTimes == 0 ){
+            console.log( speeds / collectTimes );
+            sp.style.width = Math.min( speeds / collectTimes , 100 ) + "%";
+            speeds = 0;
+        }
+
+        last_pos = pos;
+        last_dur = pos_dur.concat([]);
+    } , dur);
+
+
+ </script>
+ </body>
+</html>
