@@ -201,23 +201,14 @@ define(function( require , exports , model ){
             can.width = this.width;
             can.height = this.height;
             ctx.drawImage( originElement , 0 , 0 );
-            var imgData = ctx.getImageData(0,0,this.width,this.height);
-            sketchMod.motionBlur( imgData , 180 , 0);
-            ctx.putImageData( imgData  , 0 , 0 );
-            return;
+     
             // filter image
             sketchCanvas = can.cloneNode();
             var filterCtx = sketchCanvas.getContext('2d');
             filterCtx.drawImage( originElement , 0 , 0 );
             var imgData = filterCtx.getImageData(0,0,this.width,this.height);
-            sketchMod.motionBlur(imgData);
+            sketchMod.sketch(imgData)
 
-            var min = 0;
-            for (var i = 0 , len = imgData.data.length ; i < len; i+=4) {
-                min = ( imgData.data[i] + imgData.data[i + 1] + imgData.data[i+2] ) / 3;
-                min = ( Math.ceil( min / 32 ) ) * 32;
-                imgData.data[i] = imgData.data[i + 1] = imgData.data[i+2] = min;
-            }
             filterCtx.putImageData( imgData  , 0 , 0 );
         }
 

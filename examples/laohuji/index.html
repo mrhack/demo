@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title> pencil to the world </title>
+  <style type="text/css">
+  .lottory{
+    height: 150px;
+    overflow: hidden;
+  }
+  .lottory-item{
+    width: 78px;
+    height: 100%;
+    position: relative;
+  }
+  .lottory-item .lottory-mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 74%, rgba(0,0,0,0.5) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.5)), color-stop(24%,rgba(0,0,0,0)), color-stop(74%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.5))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 74%,rgba(0,0,0,0.5) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 74%,rgba(0,0,0,0.5) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 74%,rgba(0,0,0,0.5) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 74%,rgba(0,0,0,0.5) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
+
+  }
+
+  .lottory-item .lottory-list{
+    position: absolute;
+    width: 100%;
+    top: -100px;
+  }
+  </style>
+ </head>
+ <body>
+    <div class="lottory">
+        <div class="lottory-item">
+            <div class="lottory-mask">
+            </div>
+            <div class="lottory-list">
+                <img src="./img/1.jpg" />
+                <img src="./img/2.jpg" />
+                <img src="./img/3.jpg" />
+                <img src="./img/4.jpg" />
+                <img src="./img/5.jpg" />
+                <img src="./img/6.jpg" />
+                <img src="./img/1.jpg" />
+                <img src="./img/2.jpg" />
+                <img src="./img/3.jpg" />
+                <img src="./img/4.jpg" />
+                <img src="./img/5.jpg" />
+                <img src="./img/6.jpg" />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    var requestAnimFrame = (function() {
+        var requestAnimFrame = window.requestAnimationFrame 
+            || window['webkitRequestAnimationFrame']
+            || window['mozRequestAnimationFrame']
+            || window['msRequestAnimationFrame']
+            || window['oRequestAnimationFrame'];
+        var _now = function(){
+            return + new Date();
+        }
+        var lastTime = _now();
+
+        if(!requestAnimFrame) {
+            requestAnimFrame = function(callback) {
+                //How long did it take to render?
+                var deltaTime = _now() - lastTime;
+                var delay = Math.max(0, 1000 / 60 - deltaTime);
+
+                window.setTimeout(function() {
+                    lastTime = _now();
+                    callback();
+                }, delay);
+            };
+        }
+
+        return requestAnimFrame;
+    })();
+    var Lottery = function( $dom , cfg ){
+        this.$items = $dom.find('.lottory-item');
+        this.config = {
+            maxSpeed: 100,
+            time: 3000,
+            items: ['' , '1.jpg' , '2.jpg' , '3.jpg' , '4.jpg', '5.jpg', '6.jpg']
+        }
+    }
+    Lottery.prototype.run = function(  ){
+        function easeInQuart (x, t, b, c, d) {
+            return c*(t/=d)*t*t*t + b;
+        }
+        this.$items.each(function(){
+            var $item = $(this);
+            var $list = $item.find('.lottory-list');
+            var height = $list.height();
+
+            // use 1/3 time to speed up to max speed
+            // use 1/3 time to run with max speed
+            // use 1/3 time to slow down
+            var speed = 0;
+            var top = parseInt( $item.css('top') );
+            setTimeout( function(){
+                requestAnimFrame(function(){
+                    
+                });
+            } , Math.random() * 2000 );
+        });
+    }
+    </script>
+ </body>
+</html>
