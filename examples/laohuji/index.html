@@ -4,117 +4,470 @@
   <meta charset="utf-8"/>
   <title> pencil to the world </title>
   <style type="text/css">
-  .lottory{
-    height: 150px;
-    overflow: hidden;
-  }
-  .lottory-item{
-    width: 78px;
-    height: 100%;
-    position: relative;
-  }
-  .lottory-item .lottory-mask{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 74%, rgba(0,0,0,0.5) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.5)), color-stop(24%,rgba(0,0,0,0)), color-stop(74%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.5))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 74%,rgba(0,0,0,0.5) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 74%,rgba(0,0,0,0.5) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 74%,rgba(0,0,0,0.5) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 74%,rgba(0,0,0,0.5) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
-
-  }
-
-  .lottory-item .lottory-list{
-    position: absolute;
-    width: 100%;
-    top: -100px;
-  }
+/* line 265, ../../scss/app/chinaNeighbor.scss */
+{
+  background: #e23a66;
+  position: relative;
+}
+/* line 268, ../../scss/app/chinaNeighbor.scss */
+.cn-lottery-h {
+  margin-bottom: 10px;
+}
+/* line 271, ../../scss/app/chinaNeighbor.scss */
+.caption {
+  position: absolute;
+  left: 100px;
+  top: 120px;
+  font-size: 16px;
+  width: 210px;
+  line-height: 2em;
+  color: #ffec4e;
+  font-family: Microsoft yahei;
+  border-bottom: 1px solid #f26a8e;
+}
+/* line 281, ../../scss/app/chinaNeighbor.scss */
+.caption span {
+  padding: 6px 0px;
+  border-bottom: 1px solid #ffec4e;
+}
+/* line 286, ../../scss/app/chinaNeighbor.scss */
+.lty-info-winner {
+  position: absolute;
+  font-size: 12px;
+  top: 175px;
+  left: 100px;
+  overflow: hidden;
+  color: white;
+}
+/* line 293, ../../scss/app/chinaNeighbor.scss */
+.lty-info-winner .my-prize {
+  display: block;
+  width: 212px;
+  height: 43px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: microsoft yahei;
+  text-align: center;
+  line-height: 40px;
+  background: url(../../imagev4/app/chinaNeighbor/my-prize.png) no-repeat;
+}
+/* line 305, ../../scss/app/chinaNeighbor.scss */
+.lty-info-winner .bdpc {
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 70px;
+  height: 25px;
+  line-height: 25px;
+  margin-right: 5px;
+}
+/* line 315, ../../scss/app/chinaNeighbor.scss */
+.lty-info-winner .bdLoc {
+  width: 100px;
+  margin-right: 5px;
+}
+/* line 316, ../../scss/app/chinaNeighbor.scss */
+.lty-info-winner .bdPrize {
+  width: 76px;
+}
+/* line 317, ../../scss/app/chinaNeighbor.scss */
+.lty-info-winner a {
+  color: white;
+}
+/* line 319, ../../scss/app/chinaNeighbor.scss */
+.lty-info-winner-inner {
+  position: relative;
+}
+/* line 322, ../../scss/app/chinaNeighbor.scss */
+.lty-info-winner-inner div {
+  overflow: hidden;
+}
+/* line 326, ../../scss/app/chinaNeighbor.scss */
+.lottery-bg {
+  position: relative;
+  padding: 14px;
+  left: 310px;
+  height: 490px;
+  width: 630px;
+  top: -120px;
+  margin-bottom: -120px;
+  background: url(../../imagev4/app/lottery/lottery-bg.png) no-repeat;
+}
+/* line 336, ../../scss/app/chinaNeighbor.scss */
+.lottery {
+  position: relative;
+}
+/* line 338, ../../scss/app/chinaNeighbor.scss */
+.lottery li {
+  width: 150px;
+  height: 114px;
+  text-align: center;
+  top: 0;
+  left: 0;
+  position: absolute;
+  line-height: 114px;
+  *font-size: 100px;
+  background: url(../../imagev4/app/lottery/lottery-item.png) no-repeat;
+}
+/* line 349, ../../scss/app/chinaNeighbor.scss */
+.lottery li img {
+  vertical-align: middle;
+}
+/* line 353, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l1 {
+  left: 150px;
+}
+/* line 354, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l2 {
+  left: 300px;
+}
+/* line 355, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l3 {
+  left: 450px;
+}
+/* line 356, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l4 {
+  top: 114px;
+  left: 450px;
+}
+/* line 357, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l5 {
+  top: 228px;
+  left: 450px;
+}
+/* line 358, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l6 {
+  top: 342px;
+  left: 450px;
+}
+/* line 359, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l7 {
+  top: 342px;
+  left: 300px;
+}
+/* line 360, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l8 {
+  top: 342px;
+  left: 150px;
+}
+/* line 361, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l9 {
+  top: 342px;
+  left: 0px;
+}
+/* line 362, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l10 {
+  top: 228px;
+  left: 0px;
+}
+/* line 363, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l11 {
+  top: 114px;
+  left: 0px;
+}
+/* line 364, ../../scss/app/chinaNeighbor.scss */
+.lottery li.center {
+  line-height: 1.1em;
+  *font-size: 26px;
+  width: 300px;
+  height: 228px;
+  top: 114px;
+  left: 150px;
+  text-align: center;
+  background: none;
+  border-bottom: none;
+}
+/* line 365, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l3, .lottery li.l8 {
+  background-position: 0 0;
+}
+/* line 368, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l1, .lottery li.l4, .lottery li.l7, .lottery li.l10 {
+  background-position: -150px 0;
+}
+/* line 371, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l2, .lottery li.l5, .lottery li.l9 {
+  background-position: -300px 0;
+}
+/* line 374, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l6, .lottery li.l11 {
+  background-position: -450px 0;
+}
+/* line 377, ../../scss/app/chinaNeighbor.scss */
+.lottery li.active {
+  width: 164px;
+  height: 128px;
+  margin-top: -7px;
+  margin-left: -8px;
+  z-index: 10;
+  line-height: 128px;
+  background: url(../../imagev4/app/lottery/lottery-hover.png) no-repeat;
+}
+/* line 387, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l1.active, .lottery li.l4.active, .lottery li.l7.active, .lottery li.l10.active {
+  background-position: -164px 0;
+}
+/* line 390, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l2.active, .lottery li.l5.active, .lottery li.l9.active {
+  background-position: -328px 0;
+}
+/* line 393, ../../scss/app/chinaNeighbor.scss */
+.lottery li.l6.active, .lottery li.l11.active {
+  background-position: -492px 0;
+}
+/* line 397, ../../scss/app/chinaNeighbor.scss */
+.lottery li.center span {
+  font-size: 26px;
+  font-family: Microsoft yahei;
+  color: #ffe538;
+}
+/* line 401, ../../scss/app/chinaNeighbor.scss */
+.lottery li.center span em {
+  font-size: 30px;
+  margin: 0 3px;
+  color: white;
+}
+/* line 407, ../../scss/app/chinaNeighbor.scss */
+.lottery .start-btn {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 30px auto 5px;
+  cursor: pointer;
+  background: url(../../imagev4/app/lottery/lottery.png) no-repeat;
+}
+/* line 415, ../../scss/app/chinaNeighbor.scss */
+.lottery .start-btn:active {
+  background-position: -150px 0;
+}
   </style>
  </head>
- <body>
-    <div class="lottory">
-        <div class="lottory-item">
-            <div class="lottory-mask">
-            </div>
-            <div class="lottory-list">
-                <img src="./img/1.jpg" />
-                <img src="./img/2.jpg" />
-                <img src="./img/3.jpg" />
-                <img src="./img/4.jpg" />
-                <img src="./img/5.jpg" />
-                <img src="./img/6.jpg" />
-                <img src="./img/1.jpg" />
-                <img src="./img/2.jpg" />
-                <img src="./img/3.jpg" />
-                <img src="./img/4.jpg" />
-                <img src="./img/5.jpg" />
-                <img src="./img/6.jpg" />
-            </div>
-        </div>
+ <body >
+    <div class="lottery-bg">
+      <ul class="lottery"></ul>
     </div>
+
+    <script type="text/javascript" src="../../lib/jquery/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
+    // lottery
+    $(function(){
+        // render lottery
+        var prizes = [{"img":"\/gjfs05\/M01\/75\/18\/wKhzUlJH12r9W9rEAAA1g5-XmBM426_0-0_9-9.png","name":"ipadmini"},{"img":"\/gjfs05\/M00\/75\/53\/wKhzUlJH1-efAFJ3AABDp1nYcYw259_0-0_9-9.png","name":"\u4f73\u80fd\u6570\u7801\u76f8\u673a"},{"img":"\/gjfs05\/M01\/75\/A2\/wKhzUlJH2Iua1SOlAAAxIgreujQ884_0-0_9-9.png","name":"\u5bcc\u58eb\u62cd\u7acb\u5f97\u76f8\u673a"},{"img":"\/gjfs05\/M05\/76\/73\/wKhzUlJH2jTBMreDAAArATQ9ooo735_0-0_9-9.png","name":"\u8d76\u96c6\u5c0f\u9a74\u516c\u4ed4"},{"img":"\/gjfs05\/M00\/76\/98\/wKhzU1JH2rehrsBnAAA4748Vhxo394_0-0_9-9.png","name":"\u8d76\u96c6\u65e0\u7ebf\u9f20\u6807"},{"img":"\/gjfs05\/M02\/76\/BB\/wKhzU1JH2viTmEbCAAApJNzzkgU404_0-0_9-9.png","name":"\u8d76\u96c64gU\u76d8"},{"img":"\/gjfs05\/M00\/76\/F0\/wKhzUlJH2y,2E6MrAAA7ZO-KezA264_0-0_9-9.png","name":"\u5317\u5f71\u4e00\u5361\u901a"},{"img":"\/gjfs05\/M05\/77\/08\/wKhzUlJH21uzuRRLAAA6ajYVvds648_0-0_9-9.png","name":"\u8d76\u96c6\u94a5\u5319\u94fe"}] ;
+        var chance = 0 ;
+        var lottery = (function( ){
+            var total = 12;
+            // init lottery
+            !!(function(){
+                // create dom
+                var aHtml = [];
+                var index = 0;
+                var prize;
+                var realPrize = [];
+                var startBtn = '<li class="center"><a class="start-btn"></a><span class="tip">我还有<em id="G_chance" class="chance">' + chance + '</em>次抽奖机会</span></li>';
+                var empty = '<li class="#{class}"><img src="' + "http://sta1.ganjistatic1.com/public/" + ('app/guazi/imagev4/app/lottery/thx.png') +  '" alt=""/></li>';
+                var haoren = '<li class="#{class}"><img src="' +  "http://sta1.ganjistatic1.com/public/" + ('app/guazi/imagev4/app/lottery/haoren.png') +  '" alt="好人卡"/></li>';
 
-    var requestAnimFrame = (function() {
-        var requestAnimFrame = window.requestAnimationFrame 
-            || window['webkitRequestAnimationFrame']
-            || window['mozRequestAnimationFrame']
-            || window['msRequestAnimationFrame']
-            || window['oRequestAnimationFrame'];
-        var _now = function(){
-            return + new Date();
+                var isRenderHaoRen = false;
+                for (var i = total; i >= 1; i--) {
+                    index = ~~(Math.random() * i);
+                    if( index == prizes.length && !isRenderHaoRen ){
+                        aHtml.push(haoren.replace( '#{class}' , 'l' + aHtml.length ));
+                        isRenderHaoRen = true;
+                    } else if( index >= prizes.length ){
+                        aHtml.push(empty.replace( '#{class}' , 'l' + aHtml.length ));
+                    } else {
+                        aHtml.push('<li class="l' + aHtml.length + '"><img src="http://image.ganji.com/' + prizes[index].img  + '" alt="' + prizes[index].name + '"/></li>');
+                        prizes.splice( index , 1);
+                    }
+                };
+                aHtml.push( startBtn );
+                $('.lottery').html( aHtml.join('') );
+            })();
+            
+            var num = 0;
+            var time = 500;
+            var index = 0;
+            var status = 0;
+            var timer = null;
+            var $lis = $('.lottery li');
+            var $swrap = $('#G_sound');
+            var $audio = $swrap.find('audio');
+            $swrap.append( $audio.clone() )
+                .append( $audio.clone() )
+                .append( $audio.clone() )
+                .append( $audio.clone() )
+                .append( $audio.clone() );
+            var audioLength = $swrap.children().length;
+            var audioIndex = 0;
+            function playSound(){
+                $swrap.children()
+                    .eq( audioIndex++ % audioLength )[0]
+                    .play();
+            }
+            function loop( callback ){
+                timer = setTimeout(function(){
+                    $lis.removeClass('active')
+                        .eq( index % total )
+                        .addClass('active');
+                    if( !$.browser.msie || $.browser.version > 8 )
+                        playSound();
+
+                    if( status == 0 && index >= num - 25 ){
+                        status = 1;
+                    } else if( status == 1 && index == num ){
+                        status = 2;
+                    }
+                    switch( status ){
+                        case 0:
+                            time = Math.max( time / 1.2 , 40);
+                            loop( callback );
+                        break;
+                        case 1:
+                            time = Math.min( 500 , time * 1.1 );
+                            loop( callback );
+                        break;
+                        case 2:
+                            setTimeout(callback  , 500);
+                        break;
+                    }
+
+                    index++;
+                } , time);
+            }
+            return {
+                start: function( name, callback ){
+                    time = 500;
+                    index = num % total;
+                    status = 0;
+                    // get number
+                    var $lis = $('.lottery').find('img[alt="' + name +'"]')
+                        .closest('li');
+                    var indexTmp = $lis
+                        .eq( ~~(Math.random() * $lis.length ))
+                        .index();
+                    num = total * ( 8 + ~~(Math.random() * 4) ) + indexTmp;
+
+                    loop( callback );
+                    return this;
+                },
+                pause: function(){
+                    clearInterval( timer );
+                    return this;
+                },
+                reset: function(){
+                    clearInterval( timer );
+                    time = 600;
+                    index = 0;
+                    status = 0;
+                    $lis.removeClass('active');
+                    return this;
+                }
+            }
+        })();
+        // render winner list 
+        var h = [];
+        var c = 0;
+        function startLoop() {
+            var html = "";
+            for ( var i = 0; i < 11; ++i) {
+                html += h[(c + i + h.length) % h.length];
+            }
+            ++c;
+            if ( c > h.length ) { c = 0; }
+            $wrap.css('top', '0em').html(html);
+            setTimeout(function() {
+                $wrap.animate({'top':'-2em'}, 400, 'linear', startLoop);
+            }, 3000);
         }
-        var lastTime = _now();
-
-        if(!requestAnimFrame) {
-            requestAnimFrame = function(callback) {
-                //How long did it take to render?
-                var deltaTime = _now() - lastTime;
-                var delay = Math.max(0, 1000 / 60 - deltaTime);
-
-                window.setTimeout(function() {
-                    lastTime = _now();
-                    callback();
-                }, delay);
-            };
-        }
-
-        return requestAnimFrame;
-    })();
-    var Lottery = function( $dom , cfg ){
-        this.$items = $dom.find('.lottory-item');
-        this.config = {
-            maxSpeed: 100,
-            time: 3000,
-            items: ['' , '1.jpg' , '2.jpg' , '3.jpg' , '4.jpg', '5.jpg', '6.jpg']
-        }
-    }
-    Lottery.prototype.run = function(  ){
-        function easeInQuart (x, t, b, c, d) {
-            return c*(t/=d)*t*t*t + b;
-        }
-        this.$items.each(function(){
-            var $item = $(this);
-            var $list = $item.find('.lottory-list');
-            var height = $list.height();
-
-            // use 1/3 time to speed up to max speed
-            // use 1/3 time to run with max speed
-            // use 1/3 time to slow down
-            var speed = 0;
-            var top = parseInt( $item.css('top') );
-            setTimeout( function(){
-                requestAnimFrame(function(){
-                    
-                });
-            } , Math.random() * 2000 );
+        var $wrap = $('#G_lty-info-winner-inner');
+        $.ajax({
+            url      : "/lottery/getList/?tp=4",
+            dataType :'json'
+        })
+        .then(function( e ){
+            if ( e['err_no'] == 0 ) {
+                h = e.tips;
+                if( h && h.length == 0 ){
+                    $wrap.text('还没有获奖名单~~');
+                } else if ( h && h.length <= 10 ){
+                    $wrap.html( h.join('') );
+                } else {
+                    startLoop();
+                }
+            } else {
+                h = null;
+                $wrap.text('加载获奖列表出错了');
+            }
+        } , function(){
+            h = null;
+            $wrap.text('加载获奖列表出错了');
         });
-    }
+
+
+        // ask server to get result ,  what the fuck ,  it change the psd just ............
+        var startLottery = function( prize ){
+            
+            prize = prize || '';
+            if( !prize ){
+                prize = Math.random() > 0.5 ? "好人卡" : '';
+            }
+            isLotteryRunning = true;
+            lottery.start( prize , function(){
+                switch( prize ){
+                    case "好人卡":
+                        GZ.right('很遗憾，嗑官您没有中奖。帮助邻居，好人终将有好报！');
+                        break;
+                    case "":
+                        GZ.warn('非常遗憾，您没有中奖，再接再厉！<br/>-小贴士：答题越多，机会越大哦！');
+                        break;
+                    default: 
+                        GZ.right('wooooooh！人气爆棚，抽中' + prize + '！<br/>-请认真填写送货信息，我们会在活动之后尽快联系您发奖' , 0 , {
+                            submitText: '填地址',
+                            onSubmit: function(){
+                                window.open('/lottery/myprize/' , "_blank" );
+                            }
+                        });
+                        break;
+                }
+
+                isLotteryRunning = false;
+            });
+        }
+
+        var isLotteryRunning = false;
+        // click start btn
+        $('.lottery .start-btn').click(function(){
+            if( isLotteryRunning ) return;
+            // if not login
+            if( !GZ.isLogin() ){
+                GZ.trigger('login');
+                return false;
+            }
+
+            // get chance
+            var chance = parseInt( $('#G_chance').html() );
+            if( chance <= 0 ){
+                GZ.error('你的抽奖机会已经用光啦~~~');
+                return false;
+            }
+
+            $.ajax({
+                url: '/popact/draw/',
+                dataType :'json'
+            })
+            .then(function(e){
+                if ( e['err_no'] == 0 ) {
+                    startLottery( e.prize );
+                    $('.chance').html( --chance );
+                } else {
+                    GZ.error( e['err_info'] );
+                }
+            } , function(){
+                startLottery( '' );
+            });
+        });
+    });
     </script>
  </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title> pencil to the world </title>
+  <script type="text/javascript"
+    src="../../lib/sea/sea-debug.js"
+    data-config="../../app/config"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.css">
+ </head>
+ <body>
+
+ <script type="text/javascript">
+seajs.use(['jquery' , 'jquery.easing'] , function( $ ){
+    var starAnimate = ( function(){
+            var $wrap = $('<div>').appendTo(document.body);
+            var stars = ['★','☆'];
+            var sTop = 160;
+            var sLeft = 100;
+            var tTop = 570;
+            var tLeft = 720;
+            function now(){
+                return + new Date;
+            }
+            function getHalfLeft (){
+                return ( Math.max( $(window).width() - 960 , 0 ) ) / 2;
+            }
+            function renderStar( ){
+                var content = stars[~~( Math.random() * stars.length )];
+                var color = 'rgb(' + ~~( Math.random() * 255 ) + ', ' + ~~( Math.random() * 255 ) + ', ' + ~~( Math.random() * 255 ) + ' )';
+                var oleft = sLeft + getHalfLeft() + Math.random() * 30;
+                var otop = sTop + Math.random() * 30;
+                var fsize = ~~( 14 + Math.random() * 8 );
+                var startTime = now();
+                var tarLeft = tLeft + getHalfLeft() + Math.random() * 10;;
+                var tarTop = tTop + Math.random() * 30;
+                var totalTime = 5000;
+                var loop = function(){
+                    var dura = now() - startTime;
+                    var left = oleft + ( tarLeft - oleft ) * dura / totalTime;
+                    var top = $.easing.easeOutBack('' , dura , otop , tarTop - otop , totalTime);
+                    createStar( content , color , left , top , fsize );
+                    if( dura > totalTime ) return;
+                    setTimeout( loop , 1000 / 15 );
+                }
+                loop();
+            }
+            function createStar( content , color , oLeft , oTop , fsize ){
+                var $star = $('<span>').html( content )
+                    .css({
+                        fontSize: fsize + 'px',
+                        '-webkit-text-size-adjust':'none',
+                        color: color,
+                        position: 'absolute',
+                        top: oTop,
+                        left: oLeft
+                    })
+                    .appendTo( $wrap )
+                    .delay( 100 )
+                    .animate({
+                        opacity:  0,
+                        fontSize: 0
+                    } , 1500 , '' , function(){
+                        $(this).remove();
+                    });
+            }
+            return {
+                run: function(){
+                    for( var num = ~~(8 + Math.random() * 4) ; num > 0; num-- ){
+                        renderStar();
+                    }
+                }
+            }
+        })();
+    starAnimate.run();
+});
+ </script>
+ </body>
+</html>
