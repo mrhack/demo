@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title> pencil to the world </title>
+  <style type="text/css">
+    .poof{
+        width: 64px;
+        height: 64px;
+        position: absolute;
+        background: url(./poof.gif);
+    }
+  </style>
+ </head>
+ <body >
+    <script type="text/javascript" src="../../lib/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        var poof = function( x , y ){
+            var $poof = $('<div class="poof"></div>')
+                .appendTo(document.body)
+                .css( {
+                    top: y - 32,
+                    left: x - 32
+                });
+            var index = 0;
+            setTimeout(function animate(){
+                if( index <= -4 ){
+                    $poof.remove();
+                    return;
+                } 
+                $poof.css({
+                    backgroundPosition: '0 ' + ( --index ) * 64 + 'px'
+                });
+                setTimeout( animate , 100 );
+            } , 100);
+        }
+
+        $(document).click(function( ev ){
+            poof( ev.pageX , ev.pageY );
+        });
+    </script>
+ </body>
+</html>
